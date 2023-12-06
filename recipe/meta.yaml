@@ -11,16 +11,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
   number: 0
 
 requirements:
   host:
     - pip
-    - python >=3.4
+    - python
+    - setuptools
+    - wheel
   run:
-    - python >=3.4
+    - python
   run_constrained:
     # Packages that conflict with nvidia-ml-py
     # Both packages install pynvml.py
@@ -36,8 +37,9 @@ test:
     - pip
 
 about:
-  home: http://www.nvidia.com
+  home: https://developer.nvidia.com/nvidia-management-library-nvml
   summary: Python Bindings for the NVIDIA Management Library
+  description: Python Bindings for the NVIDIA Management Library
   license: BSD-3-Clause
   license_family: BSD
   license_file: README.txt
