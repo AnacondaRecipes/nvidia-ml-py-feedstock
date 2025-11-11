@@ -1,13 +1,13 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "12.535.133" %}
-{% set sha256 = "b1559af0d57dd20955bf58d05afff7b166ddd44947eb3051c9905638799eb1dc" %}
+{% set version = "13.580.82" %}
+{% set sha256 = "0c028805dc53a0e2a6985ea801888197765ac2ef8f1c9e29a7bf0d3616a5efc7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/n/nvidia-ml-py/nvidia_ml_py-13.580.82.tar.gz
   sha256: {{ sha256 }}
 
 build:
