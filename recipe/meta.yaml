@@ -1,18 +1,17 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "12.535.133" %}
-{% set sha256 = "b1559af0d57dd20955bf58d05afff7b166ddd44947eb3051c9905638799eb1dc" %}
+{% set version = "13.580.82" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
+  sha256: 0c028805dc53a0e2a6985ea801888197765ac2ef8f1c9e29a7bf0d3616a5efc7
 
 build:
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
   number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
@@ -42,7 +41,7 @@ about:
   description: Python Bindings for the NVIDIA Management Library
   license: BSD-3-Clause
   license_family: BSD
-  license_file: README.txt
+  license_file: PKG-INFO
   dev_url: https://developer.nvidia.com/nvidia-management-library-nvml
   doc_url: https://docs.nvidia.com/deploy/nvml-api/index.html
 
