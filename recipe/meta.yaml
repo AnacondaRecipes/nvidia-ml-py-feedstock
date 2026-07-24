@@ -1,5 +1,5 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "13.580.82" %}
+{% set version = "12.560.30" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
-  sha256: 0c028805dc53a0e2a6985ea801888197765ac2ef8f1c9e29a7bf0d3616a5efc7
+  sha256: f0254dc7400647680a072ee02509bfd46102b60bdfeca321576d4d4817e7fe97
 
 build:
   number: 0
